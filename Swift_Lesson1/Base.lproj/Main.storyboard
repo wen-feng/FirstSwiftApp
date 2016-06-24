@@ -65,7 +65,7 @@
                             </imageView>
                             <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-2q-56C">
                                 <subviews>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登愣！！！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPR-0n-kvJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登愣！！！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPR-0n-kvJ">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="4vg-ZP-ySn"/>
                                         </constraints>
@@ -73,12 +73,52 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U21-8c-RaK">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="188" id="1Db-JG-DW5"/>
+                                            <constraint firstAttribute="height" constant="112" id="nHb-Iv-Uie"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="29" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="65" minY="0.0" maxX="0.0" maxY="50"/>
+                                        <state key="normal" title="按它心碎" image="break"/>
+                                        <connections>
+                                            <action selector="GotSadWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tiL-XB-3PH"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-4X-BnL">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5qe-xE-4CB"/>
+                                            <constraint firstAttribute="width" constant="59" id="V23-7T-VT4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odP-bJ-tP4">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="39" id="DDR-G3-SPf"/>
+                                            <constraint firstAttribute="height" constant="34" id="F18-RQ-HpJ"/>
+                                        </constraints>
+                                        <state key="normal" image="close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f8I-AW-NkG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="vgY-4X-BnL" firstAttribute="leading" secondItem="9cs-2q-56C" secondAttribute="leading" constant="137" id="1R3-Hm-bKQ"/>
                                     <constraint firstItem="zPR-0n-kvJ" firstAttribute="centerX" secondItem="9cs-2q-56C" secondAttribute="centerX" id="2MP-dt-KKY"/>
                                     <constraint firstItem="zPR-0n-kvJ" firstAttribute="leading" secondItem="9cs-2q-56C" secondAttribute="leading" constant="96" id="EbB-0p-KRe"/>
+                                    <constraint firstItem="odP-bJ-tP4" firstAttribute="top" secondItem="9cs-2q-56C" secondAttribute="top" constant="18" id="R1F-bF-DML"/>
+                                    <constraint firstItem="odP-bJ-tP4" firstAttribute="trailing" secondItem="9cs-2q-56C" secondAttribute="trailingMargin" id="VCi-0Z-LO3"/>
+                                    <constraint firstItem="U21-8c-RaK" firstAttribute="top" secondItem="zPR-0n-kvJ" secondAttribute="bottom" constant="29" id="dky-SM-gur"/>
+                                    <constraint firstItem="U21-8c-RaK" firstAttribute="leading" secondItem="9cs-2q-56C" secondAttribute="leading" constant="64" id="f5B-DC-W1z"/>
                                     <constraint firstItem="zPR-0n-kvJ" firstAttribute="centerY" secondItem="9cs-2q-56C" secondAttribute="centerY" id="peJ-2R-crD"/>
+                                    <constraint firstItem="vgY-4X-BnL" firstAttribute="top" secondItem="U21-8c-RaK" secondAttribute="bottom" constant="8" symbolic="YES" id="zfg-MG-89w"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -116,6 +156,7 @@
                         <outlet property="OButton" destination="f3O-WJ-eG1" id="bwf-nQ-9CF"/>
                         <outlet property="oopsLabel" destination="zPR-0n-kvJ" id="Pfj-Jy-AXD"/>
                         <outlet property="oopsView" destination="9cs-2q-56C" id="vEb-4X-aqj"/>
+                        <outlet property="sadCountLabel" destination="vgY-4X-BnL" id="5CK-AQ-fUl"/>
                         <outlet property="upImage1" destination="uec-x9-1aN" id="8OO-7X-3S5"/>
                         <outlet property="upImage2" destination="FZP-6J-SqS" id="LCA-wB-Jue"/>
                     </connections>
@@ -129,6 +170,8 @@
         <image name="DisneyWorld" width="1478" height="766"/>
         <image name="G" width="112" height="104"/>
         <image name="O" width="90" height="90"/>
+        <image name="break" width="54" height="38"/>
+        <image name="close" width="394" height="394"/>
         <image name="up" width="246" height="322"/>
     </resources>
 </document>

@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var OButton: UIButton!
     @IBOutlet weak var oopsView: UIView!
     @IBOutlet weak var oopsLabel: UILabel!
+    @IBOutlet weak var sadCountLabel: UILabel!
+
+    var sadCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +32,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func GButton (sender: AnyObject) {
-        self.OButton.isEnabled = false
         self.upImage1.isHidden = true
         self.upImage2.isHidden = false
         self.OButton.isEnabled = true
-        
+        self.GButton.isEnabled = false
     }
     
     @IBAction func OButton (sender: AnyObject) {
@@ -43,8 +45,23 @@ class ViewController: UIViewController {
         present(alertView, animated: true, completion: nil)
         
         self.oopsView.isHidden = false
-        self.oopsLabel.isHidden = false
+//        self.oopsLabel.isHidden = false
+    }
+    @IBAction func GotSad(sender: AnyObject) {
+        if sadCount >= 10 {
+            self.sadCountLabel.text = "full"
+        } else {
+            sadCount = sadCount + 1
+            self.sadCountLabel.text = "\(sadCount)"
+        }
     }
 
+    @IBAction func closeBtn(_ sender: AnyObject) {
+        self.oopsView.isHidden = true
+        self.GButton.isEnabled = true
+        self.OButton.isEnabled = false
+        self.upImage1.isHidden = false
+        self.upImage2.isHidden = true
+    }
 }
 
